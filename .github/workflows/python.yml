@@ -17,7 +17,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
           cache: pip
-      - run: pip install .[dev,testing]
+          cache-dependency-path: constraints.txt
+      - run: pip install .[dev,testing] -c constraints.txt
       - run: black --check --diff typedargs
       - run: mypy typedargs
       - run: pytest --cov=typedargs --cov-report=term-missing
