@@ -10,7 +10,11 @@ name = "typedargs"
 description = "commandline parser for typed objects"
 readme = "README.md"
 authors = [{name="Atsushi Odagiri", email="aodagx@gmail.com"}]
-urls = {"homepage" = "https://github.com/aodag/typedargs"}
+urls = {homepage = "https://github.com/aodag/typedargs"}
 license = {text = "MIT"}
-# version = "0.1"
+
 dynamic = ["version"]
+
+[project.optional-dependencies]
+testing = ["pytest", "pytest-cov", "pytest-mock"]
+dev = ["mypy", "black"]
