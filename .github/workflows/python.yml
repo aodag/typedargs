@@ -18,6 +18,7 @@ jobs:
           architecture: x64
           cache: pip
           cache-dependency-path: constraints.txt
+      - run: python -m pip install -U pip setuptools
       - run: pip install .[dev,testing] -c constraints.txt
       - run: black --check --diff typedargs
       - run: mypy typedargs
